@@ -1,0 +1,210 @@
+Day 0
+
+Hi, Jason from Machine Learning Mastery here.
+
+I'm really excited that you have joined me on my machine learning with Python mini-course.
+
+You can download your PDF version of the mini-course here.
+
+Over the next 14 weekdays, you will discover how you can get started, build accurate models and confidently complete predictive modeling machine learning projects.
+
+Let's take a look at what is ahead for you in this course:
+Day 1: Download and Install Python and SciPy Ecosystem (today).
+Day 2: Get Around In Python, NumPy, Matplotlib and Pandas.
+Day 3: Load Data and Standard Machine Learning Datasets.
+Day 4: Understand Data with Descriptive Statistics.
+Day 5: Understand Data with Visualization.
+Day 6: Prepare For Modeling by Pre-Processing Data.
+Day 7: Algorithm Evaluation With Resampling Methods.
+Day 8: Algorithm Evaluation Metrics.
+Day 9: Spot-Check Machine Learning Algorithms.
+Day 10: Model Comparison and Selection.
+Day 11: Improve Accuracy with Algorithm Tuning.
+Day 12: Improve Accuracy with Ensemble Predictions.
+Day 13: Finalize And Save Your Model.
+Day 14: Hello World End-to-End Project.
+Each lesson could take you 60 seconds or up to 30 minutes. Take your time and complete the lessons at your own pace.
+
+The lessons do expect you to go off and find out how to do things. I will give you hints, but part of the point of each lesson is to force you to learn where to go to look for help on and about the Python platform (hint, I have all of the answers directly on MachineLearningMastery.com, use the search).
+
+This is going to be great!
+I'll send you the first lesson in just a few minutes.
+
+Jason.
+
+Day 1
+
+Hi, You cannot get started with machine learning in Python until you have access to the platform.
+
+This lesson is easy, you must download and install the Python 3.6 platform on your computer.
+
+Visit the Python homepage and download Python for your operating system (Linux, OS X or Windows). Install Python on your computer. You may need to use a platform specific package manager such as macports on OS X or yum on RedHat Linux.
+
+You also need to install the SciPy platform and the scikit-learn library. I recommend using the same approach that you used to install Python.  You can install everything at once (much easier) with Anaconda. Anaconda is recommended for beginners.
+
+Start Python for the first time from command line by typing "python" at the command line.  Check the versions of everything you are going to need using the code below:
+# Python version
+import sys
+print('Python: {}'.format(sys.version))
+# scipy
+import scipy
+print('scipy: {}'.format(scipy.__version__))
+# numpy
+import numpy
+print('numpy: {}'.format(numpy.__version__))
+# matplotlib
+import matplotlib
+print('matplotlib: {}'.format(matplotlib.__version__))
+# pandas
+import pandas
+print('pandas: {}'.format(pandas.__version__))
+# scikit-learn
+import sklearn
+print('sklearn: {}'.format(sklearn.__version__))
+Need more help? See this blog post:
+
+>>How to Setup a Python Environment for Machine Learning and Deep Learning with Anaconda
+
+In the next lesson, we will look at basic Python and SciPy syntax.
+
+Jason.
+
+
+
+Day 2
+
+Hi, You need to be able to read and write basic Python scripts.
+
+As a developer, you can pick up new programming languages pretty quickly. Python is case sensitive, uses hash (#) for comments and uses white space to indicate code blocks (white space matters).
+
+Today's task is to practice the basic syntax of the Python programming language and important SciPy data structures in the Python interactive environment.
+Practice assignment, working with lists and flow control in Python.
+Practice working with NumPy arrays.
+Practice creating simple plots in Matplotlib.
+Practice working with Pandas Series and DataFrames.
+For example, below is a simple example of creating a Pandas DataFrame.
+
+# dataframe
+import numpy
+import pandas
+myarray = numpy.array([[1, 2, 3], [4, 5, 6]])
+rownames = ['a', 'b']
+colnames = ['one', 'two', 'three']
+mydataframe = pandas.DataFrame(myarray, index=rownames, columns=colnames)
+print(mydataframe)
+
+In the next lesson, we will look at loading data into Python.
+
+Jason.
+
+Day 3
+
+Hi, Machine learning algorithms need data.
+
+You can load your own data from CSV files but when you are getting started with machine learning in Python you should practice on standard machine learning datasets.
+
+Your task for today's lesson is to get comfortable loading data into Python and to find and load standard machine learning datasets.
+
+There are many excellent standard machine learning datasets in CSV format that you can download and practice with on the UCI machine learning repository.
+Practice loading CSV files into Python using the CSV.reader() function in the standard library.
+Practice loading CSV files using NumPy and the numpy.loadtxt() function.
+Practice loading CSV files using Pandas and the pandas.read_csv() function.
+To get you started below is a snippet that will load the Pima Indians onset of diabetes dataset using Pandas directly from the UCI Machine Learning Repository.
+# Load CSV using Pandas from URL
+from pandas import read_csv
+url = "https://goo.gl/bDdBiA"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+data = read_csv(url, names=names)
+print(data.shape)
+In the next lesson, you will calculate descriptive statistics for your data in Python.
+
+Jason
+
+
+Day 4
+
+Hi, once you have loaded your data into Python you need to be able to understand it.
+
+The better you can understand your data, the better and more accurate the models that you can build. The first step to understanding your data is to use descriptive statistics.
+
+Today your lesson is to learn how to use descriptive statistics to understand your data. I recommend using the helper functions provided on the Pandas DataFrame.
+Understand your data using the head() function to look at the first few rows.
+Review the dimensions of your data with the shape property.
+Look at the data types for each attribute with the dtypes property.
+Review the distribution of your data with the describe() function.
+Calculate pair-wise correlation between your variables using the corr() function.
+The below example loads the Pima Indians onset of diabetes dataset and summarizes the distribution of each attribute.
+# Statistical Summary
+import pandas
+url = "https://goo.gl/bDdBiA"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+data = pandas.read_csv(url, names=names)
+description = data.describe()
+print(description)
+
+Try it out!
+
+In the next lesson, you will learn about data visualization in Python.
+
+Jason. 
+
+Day 5
+
+Hi, continuing on from the last lesson, you must spend time to better understand your data.
+
+A second way to improve your understanding of your data is by using data visualization techniques (e.g. plotting).
+
+Today, your lesson is to learn how to use plotting in Python to understand attributes alone and their interactions. Again, I recommend using the helper functions provided on the Pandas DataFrame.
+Use the hist() function to create a histogram of each attribute.
+Use the plot(kind='box') function to create box and whisker plots of each attribute.
+Use the pandas.scatter_matrix() function to create pair-wise scatter plots of all attributes.
+For example, the snippet below will load the diabetes dataset and create a scatter plot matrix of the dataset.
+# Scatter Plot Matrix
+import matplotlib.pyplot as plt
+import pandas
+from pandas.plotting import scatter_matrix
+url = "https://goo.gl/bDdBiA"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+data = pandas.read_csv(url, names=names)
+scatter_matrix(data)
+plt.show()
+
+In the next lesson, you will learn how to pre-process your data in Python. 
+
+Jason.
+
+Day 6
+
+Hi, your raw data may not be setup to be in the best shape for modeling.
+
+Sometimes you need to pre-process your data in order to best present the inherent structure of the problem in your data to the modeling algorithms. In today's lesson, you will use the pre-processing capabilities provided by the scikit-learn.
+
+The scikit-learn library provides two standard idioms for transforming data and each is useful in a different circumstance:
+Fit and Multiple Transform.
+Combined Fit-And-Transform.
+There are many techniques that you can use to prepare your data for modeling. For example, try out some of the following:
+Standardize numerical data (e.g. mean of 0 and standard deviation of 1) using the scale and center options.
+Normalize numerical data (e.g. to a range of 0-1) using the range option.
+Explore more advanced feature engineering such as Binarizing.
+For example, the snippet below loads the Pima Indians onset of diabetes dataset, calculates the parameters needed to standardize the data, then creates a standardized copy of the input data.
+# Standardize data (0 mean, 1 stdev)
+from sklearn.preprocessing import StandardScaler
+import pandas
+import numpy
+url = "https://goo.gl/bDdBiA"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+dataframe = pandas.read_csv(url, names=names)
+array = dataframe.values
+# separate array into input and output components
+X = array[:,0:8]
+Y = array[:,8]
+scaler = StandardScaler().fit(X)
+rescaledX = scaler.transform(X)
+# summarize transformed data
+numpy.set_printoptions(precision=3)
+print(rescaledX[0:5,:])
+
+In the next lesson, you will discover resampling methods to estimate the accuracy of algorithms.
+
+Jason.
+

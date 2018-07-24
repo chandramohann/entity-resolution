@@ -1,0 +1,170 @@
+Day 0
+
+Hi, Jason from Machine Learning Mastery here.
+
+I'm really excited that you have joined me on this Applied Machine Learning With Weka mini-course.
+
+You can download your PDF version of the mini-course here.
+
+Over the next 14 days, you will discover how you can get started in applied machine learning using the Weka platform without writing a single line of code.
+
+Let's take a look at what is ahead for you in this course:
+Day 01: Download and Install Weka (today).
+Day 02: Load Standard Machine Learning Datasets.
+Day 03: Descriptive Stats and Visualization.
+Day 04: Rescale Your Data.
+Day 05: Perform Feature Selection on Your Data.
+Day 06: Machine Learning Algorithms in Weka.
+Day 07: Estimate Model Performance.
+Day 08: Baseline Performance On Your Data.
+Day 09: Classification Algorithms.
+Day 10: Regression Algorithms.
+Day 11: Ensemble Algorithms.
+Day 12: Compare the Performance of Algorithms.
+Day 13: Tune Algorithm Parameters.
+Day 14: Save Your Model.
+Each lesson will take you about 30 minutes. Take your time and complete the lessons at your own pace.
+
+The lessons do expect you to go off and find out how to do things. I will give you hints, but part of the point of each lesson is to force you to learn where to go to look for help on and about machine learning with Weka (hint, I have all of the answers directly on MachineLearningMastery.com - use the search).
+
+This is going to be great!
+I'll send you the first lesson in just a few minutes.
+
+Jason.
+
+Day 1
+
+Hi, the first thing to do is install the Weka software on your workstation.
+
+Weka is free open source software. It is written in Java and can run on any platform that supports Java, including:
+Windows.
+Mac OS X.
+Linux.
+You can download Weka as standalone software or as a version bundled with Java.
+
+If you do not already have Java installed on your system, I recommend downloading and installing a version bundled with Java.
+
+Your task for this lesson is to visit the Weka download page, download and install Weka on your workstation.
+
+In the next lesson, you will discover how to load standard machine learning datasets.
+
+Jason.
+
+Day 2
+
+Hi, now that you have Weka installed, you need to load data.
+
+Weka is designed to load data in a native format called ARFF. It is a modified CSV format that includes additional information about the types of each attribute (column).
+
+Your Weka installation includes a subdirectory with a number of standard machine learning datasets in ARFF format ready for you to load.
+
+Weka also supports loading data from raw CSV files as well as a database and converts the data to ARFF as needed.
+
+In this lesson, you will load a standard dataset in the Weka Explorer.
+Start Weka (click on the bird icon), this will start the Weka GUI Chooser.
+Click the “Explorer” button, this will open the Weka Explorer interface.
+Click the “Open file…” button and navigate to the data/ directory in your Weka installation and load the diabetes.arff dataset.
+Note, if you do not have a data/ directory in your Weka installation, or you cannot find it, download the .zip version of Weka from the Weka download webpage, unzip it and access the data/ directory.
+
+You have just loaded your first dataset in Weka.
+
+Try loading some of the other datasets in the data/ directory.
+
+Try downloading a raw CSV file from the UCI Machine Learning repository and loading it in Weka.
+
+In the next lesson, you will learn how to use descriptive stats and data visualization in Weka.
+
+Jason.
+
+Day 3
+
+Hi, once you can load data in Weka, it is important to take a look at it.
+
+Weka lets you review descriptive statistics calculated from your data. It also provides visualization tools.
+
+In this lesson, you will use Weka to learn more about your data.
+Open the Weka GUI Chooser.
+Open the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click on different attributes in the “Attributes” list and review the details in the “Selected attribute” pane.
+Click the “Visualize All” button to review all attribute distributions.
+Click the “Visualize” tab and review the scatter plot matrix for all attributes.
+Get comfortable reviewing the details for different attributes in the “Preprocess” tab and tuning the scatter plot matrix in the “Visualize” tab.
+
+In the next lesson, you will discover how to scale your data.
+
+Jason.
+
+Day 4
+
+Hi, raw data is often not suitable for modeling.
+
+Often you can improve the performance of your machine learning models by rescaling attributes.
+
+In this lesson, you will learn how to use data filters in Weka to rescale your data. You will normalize all of the attributes for a dataset, rescaling them to the consistent range of 0-to-1.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Choose” button in the “Filter” pane and select unsupervised.attribute.Normalize.
+Click the “Apply” button.
+Review the details for each attribute in the “Selected attribute” pane and note the change to the scale.
+
+Explore using other data filters such as the Standardize filter.
+
+Explore configuring filters by clicking on the name of the loaded filter and changing its parameters.
+
+Test out saving modified datasets for later use by clicking the “Save…” button on the “Preprocess” tab.
+
+In the next lesson, you will discover how to use feature selection in Weka.
+
+Jason.
+
+Day 5
+
+Hi, not all of the attributes in your dataset may be relevant to the attribute you want to predict.
+
+You can use feature selection to identify those attributes that are most relevant to your output variable.
+
+In this lesson, you will get familiar with using different feature selection methods.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Select attributes” tab.
+Click the “Choose” button in the “Attribute Evaluator” pane and select the “CorrelationAttributeEval”. You will be presented with a dialog asking you to change to the “Ranker” search method, needed when using this feature selection method. Click the “Yes” button.
+Click the “Start” button to run the feature selection method.
+Review the output in the “Attribute selection output” pane and note the correlation scores for each attribute, the larger numbers indicating the relevant features.
+
+Explore other feature selection methods such as the use of information gain (entropy).
+
+Explore selecting features to removal from your dataset in the “Preprocess” tab and the “Remove” button.
+
+In the next lesson, you will discover how to use machine learning algorithms in Weka.
+
+Jason.
+
+Day 6
+
+Hi, a key benefit of the Weka workbench is the large number of machine learning algorithms it provides.
+
+You need to know your way around machine learning algorithms.
+
+In this lesson, you will take a closer look at machine learning algorithms in Weka.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Classify” tab.
+Click the “Choose” button and note the different groupings for algorithms.
+Click the name of the selected algorithm to configure it.
+Click the “More” button on the configuration window to learn more about the implementation.
+Click the “Capabilities” button on the configuration window to learn more about how it can be used.
+Note the “Open” and “Save” buttons on the window where different configurations can be saved and loaded.
+Hover on a configuration parameter and note the tooltip help.
+Click the “Start” button to run an algorithm.
+Browse the algorithms available. Note that some algorithms are unavailable given whether your dataset is a classification (predict a category) or regression (predict a real value) type problem.
+
+Explore and learn more about the various algorithms available in Weka.
+
+Get confidence choosing and configuring algorithms.
+
+In the next lesson, you will discover how to estimate the performance of your models.
+
+Jason.
+
+
