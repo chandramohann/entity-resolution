@@ -167,4 +167,82 @@ In the next lesson, you will discover how to estimate the performance of your mo
 
 Jason.
 
+Day 7
+
+Hi, now that you know how to choose and configure different algorithms, you need to know how to evaluate the performance of an algorithm.
+
+In this lesson, you are going to learn about the different ways to evaluate the performance of an algorithm in Weka.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Classify” tab.
+The “Test options” pane lists the various different techniques that you can use to evaluate the performance of an algorithm.
+The gold standard is 10-fold “Cross Validation”. This is selected by default. For a small dataset, the number of folds can be adjusted from 10 to 5 or even 3.
+If your dataset is very large and you want to evaluate algorithms quickly, you can use the “Percentage split” option. By default, this option will train on 66% of your dataset and use the remaining 34% to evaluate the performance of your model.
+Alternately, if you have a separate file containing a validation dataset, you can evaluate your model on that by selecting the “Supplied test set” option. Your model will be trained on the entire training dataset and evaluated on the separate dataset.
+Finally, you can evaluate the performance of your model on the whole training dataset. This is useful if you are more interested in a descriptive than a predictive model.
+Click the “Start” button to run a given algorithm with your chosen test option.
+
+Experiment with different Test options.
+
+You can further refine the test options in the configuration provided by clicking the “More options…” button.
+
+Well done, you made it to the half-way point.
+In the next lesson, you will discover how to create a baseline performance for your problem.
+
+Jason.
+
+
+Day 8
+
+Hi, when you start evaluating multiple machine learning algorithms on your dataset, you need a baseline for comparison.
+
+A baseline result gives you a point of reference to know whether the results for a given algorithm are good or bad, and by how much.
+
+In this lesson, you will learn about the ZeroR algorithm that you can use as a baseline for classification and regression algorithms.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Classify” tab. The ZeroR algorithm is chosen by default.
+Click the “Start” button.
+This will run the ZeroR algorithm using 10-fold cross validation on your dataset.
+
+The ZeroR algorithm also called the Zero Rule is an algorithm that you can use to calculate a baseline of performance for all algorithms on your dataset. It is the “worst” result and any algorithm that shows a better performance has some skill on your problem.
+
+On a classification algorithm, the ZeroR algorithm will always predict the most abundant category. If the dataset has an equal number of classes, it will predict the first category value.
+
+On the diabetes dataset, this results in a classification accuracy of 65%.
+
+For regression problems, the ZeroR algorithm will always predict the mean output value.
+
+Experiment with the ZeroR algorithm on a range of different datasets. It is the algorithm you should always run first before all others to develop a baseline.
+
+In the next lesson, you will discover 5 top classification machine learning algorithms.
+
+Jason.
+
+Day 9
+
+Hi, Weka provides a large number of classification algorithms.
+
+In this lesson, you will discover 5 top classification algorithms that you can use on your classification problems.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Classify” tab.
+Click the “Choose” button.
+5 Top algorithms that you can use for classification include:
+Logistic Regression (functions.Logistic).
+Naive Bayes (bayes.NaiveBayes).
+k-Nearest Neighbors (lazy.IBk).
+Classification and Regression Trees (trees.REPTree).
+Support Vector Machines (functions.SMO).
+Experiment with each of these top algorithms.
+
+Try them out on different classification datasets, such as those with two classes and those with more.
+
+In the next lesson, you will discover 5 top regression machine learning algorithms.
+
+Jason.
+
+
+
+
 

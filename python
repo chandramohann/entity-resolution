@@ -208,3 +208,95 @@ In the next lesson, you will discover resampling methods to estimate the accurac
 
 Jason.
 
+Day 7
+
+Hi, the dataset used to train a machine learning algorithm is called a training dataset.
+
+The dataset used to train an algorithm cannot be used to give you reliable estimates of the accuracy of the model on new data. This is a big problem because the whole idea of creating the model is to make predictions on new data.
+
+You can use statistical methods called resampling methods to split your training dataset up into subsets, some are used to train the model and others are held back and used to estimate the accuracy of the model on unseen data. 
+Split a dataset into training and test sets.
+Estimate the accuracy of an algorithm using k-fold cross validation.
+Estimate the accuracy of an algorithm using leave one out cross validation.
+The snippet below uses scikit-learn to estimate the accuracy of the Logistic Regression algorithm on the Pima Indians onset of diabetes dataset using 10-fold cross validation.
+# Evaluate using Cross Validation
+from pandas import read_csv
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+url = "https://goo.gl/bDdBiA"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+dataframe = read_csv(url, names=names)
+array = dataframe.values
+X = array[:,0:8]
+Y = array[:,8]
+kfold = KFold(n_splits=10, random_state=7)
+model = LogisticRegression()
+results = cross_val_score(model, X, Y, cv=kfold)
+print("Accuracy: %.3f%% (%.3f%%)" % (results.mean()*100.0, results.std()*100.0))
+Did you realize that this is the half-way point? Well done!
+
+In the next lesson, you will discover the different algorithm evaluation metrics that you can use.
+
+Jason.
+
+Day 8
+
+Hi, there are many different metrics that you can use to evaluate the skill of a machine learning algorithm on a dataset.
+
+You can specify the metric used for your test harness in scikit-learn via the cross_val_score() function and defaults can be used for regression and classification problems. Your goal with today's lesson is to practice using the different algorithm performance metrics available in the scikit-learn package.
+Practice using the Accuracy and Kappa metrics on a classification problem.
+Practice generating a confusion matrix and a classification report.
+Practice using RMSE and RSquared metrics on a regression problem.
+The snippet below demonstrates calculating the LogLoss metric on the Pima Indians onset of diabetes dataset.
+# Cross Validation Classification LogLoss
+from pandas import read_csv
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+url = "https://goo.gl/bDdBiA"
+names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
+dataframe = read_csv(url, names=names)
+array = dataframe.values
+X = array[:,0:8]
+Y = array[:,8]
+kfold = KFold(n_splits=10, random_state=7)
+model = LogisticRegression()
+scoring = 'neg_log_loss'
+results = cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print("Logloss: %.3f (%.3f)" % (results.mean(), results.std())​)​
+
+In the next lesson, you will learn about spot-checking machine learning algorithms. 
+Jason.
+
+Day 9
+
+Hi, you cannot possibly know which algorithm will perform best on your data beforehand.
+
+You have to discover it using a process of trial and error. I call this spot-checking algorithms. The scikit-learn library provides an interface to many machine learning algorithms and tools to compare the estimated accuracy of those algorithms.
+
+In this lesson, you must practice spot-checking different machine learning algorithms.
+Spot-check linear algorithms on a dataset (e.g. linear regression, logistic regression and linear discriminate analysis).
+Spot-check some nonlinear algorithms on a dataset (e.g. KNN, SVM and CART).
+Spot-check some sophisticated ensemble algorithms on a dataset (e.g. random forest and stochastic gradient boosting).
+For example, the snippet below spot-checks the K-Nearest Neighbors algorithm on the Boston House Price dataset.
+# KNN Regression
+from pandas import read_csv
+from sklearn.model_selection import KFold
+from sklearn.model_selection import cross_val_score
+from sklearn.neighbors import KNeighborsRegressor
+url = "https://goo.gl/FmJUSM"
+names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B', 'LSTAT', 'MEDV']
+dataframe = read_csv(url, delim_whitespace=True, names=names)
+array = dataframe.values
+X = array[:,0:13]
+Y = array[:,13]
+kfold = KFold(n_splits=10, random_state=7)
+model = KNeighborsRegressor()
+scoring = 'neg_mean_squared_error'
+results = cross_val_score(model, X, Y, cv=kfold, scoring=scoring)
+print(results.mean())
+In the next lesson, you will learn about how to choose the best model for your dataset.
+
+Jason.
+
