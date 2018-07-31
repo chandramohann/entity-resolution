@@ -242,7 +242,59 @@ In the next lesson, you will discover 5 top regression machine learning algorith
 
 Jason.
 
+Day 10
 
+Hi, classification algorithms is Weka’s specialty, but many of these algorithms can be used for regression.
 
+Regression is the prediction of a real valued outcome (like a dollar amount), different from classification that predicts a category (like “dog” or “cat”).
 
+In this lesson you will discover 5 top regression algorithms that you can use on your regression problems.
+
+You can download a suite of standard regression machine learning datasets from the Weka dataset download webpage. Download the datasets-numeric.jar archive of regression problems, titled: “A jar file containing 37 regression problems, obtained from various sources”.
+
+Use your favorite unzip program to unzip the .jar file and you will have a new directory called numeric/ containing 37 regression problems that you can work with.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/housing.arff dataset.
+Click the “Classify” tab.
+Click the “Choose” button.
+5 Top algorithms that you can use for regression include:
+Linear Regression (functions.LinearRegression).
+Support Vector Regression (functions.SMOReg).
+k-Nearest Neighbors (lazy.IBk).
+Classification and Regression Trees (trees.REPTree).
+Artificial Neural Network (functions.MultilayerPerceptron).
+Experiment with each of these top algorithms.
+
+Try them out on different regression datasets.
+
+In the next lesson, you will discover how you can use top ensemble techniques in Weka.
+
+Jason.
+
+Day 11
+
+Hi, Weka is very easy to use and this may be its biggest advantage over other platforms.
+
+In addition to this, Weka provides a large suite of ensemble machine learning algorithms and this may be Weka’s second big advantage over other platforms.
+
+It is worth spending your time to get good at using Weka’s ensemble algorithms. In this lesson, you will discover 5 top ensemble machine learning algorithms that you can use.
+Open the Weka GUI Chooser and then the Weka Explorer.
+Load the data/diabetes.arff dataset.
+Click the “Classify” tab.
+Click the “Choose” button.
+5 Top ensemble algorithms that you can use include:
+Bagging (meta.Bagging).
+Random Forest (trees.RandomForest).
+AdaBoost (meta.AdaBoost).
+Voting (meta.Voting).
+Stacking (meta.Stacking).
+Experiment with each of these top algorithms.
+
+Most of these ensemble methods let you choose the sub-models. Experiment using different combinations of sub-models. Combinations of techniques that work in very different ways and produce different predictions often result in better performance.
+
+Try them out on different classification and regression datasets.
+
+In the next lesson, you will discover how to design a controlled experiment to compare algorithms.
+
+Jason.
 
