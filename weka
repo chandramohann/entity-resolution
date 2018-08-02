@@ -298,3 +298,31 @@ In the next lesson, you will discover how to design a controlled experiment to c
 
 Jason.
 
+Day 12
+
+Hi, Weka provides a different tool specifically designed for comparing algorithms called the Weka Experiment Environment.
+
+The Weka Experiment Environment allows you to design and execute controlled experiments with machine learning algorithms and then analyze the results.
+
+In this lesson, you will design your first experiment in Weka and discover how to use the Weka Experiment Environment to compare the performance of machine learning algorithms.
+Open the “Weka Chooser GUI”.
+Click the “Experimenter” button to open the “Weka Experiment Environment”.
+Click the “New” button.
+Click the “Add new…” button in the “Datasets” pane and select “data/diabetes.arff”.
+Click the “Add new…” button in the “Algorithms” pane and add “ZeroR” and “IBk”.
+Click the “Run” tab and click the “Start” button.
+Click the “Analyse” tab and click the “Experiment” button and then the “Perform test” button.
+You just designed, executed and analyzed the results of your first controlled experiment in Weka.
+
+You compared the ZeroR algorithm to the IBk algorithm with default configuration on the diabetes dataset.
+
+The results show that IBK has a higher classification accuracy than ZeroR and that this difference is statistically significant (the little “v” character next to the result).
+
+Expand the experiment and add more algorithms and rerun the experiment.
+
+Change the “Test base” on the “Analyse” tab to change which set of results is taken as the reference for comparison to the other results.
+
+In the next lesson, you will discover how you can tune the parameters of machine learning algorithms.
+
+Jason.
+
